@@ -1,0 +1,8 @@
+Django
+djangorestframework
+crewai
+crewai-tools
+pyyaml
+markdown
+django-filter
+googlesearch
