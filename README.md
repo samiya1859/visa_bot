@@ -5,7 +5,7 @@ This project allows users to interact with an AI agent that searches government 
 
 ## Requirements
 The project requires Python 3.8 or higher, along with Django and Django REST Framework. The core functionality is powered by an AI agent that interacts with government embassy websites to extract visa document information.
----
+
 
 ## Setup and Installation
 
