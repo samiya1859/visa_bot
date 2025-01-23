@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa Agent AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
+        <div class="container-fluid">
+            <!-- Left-aligned nav links -->
+            <div class="navbar-nav me-auto">
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Contact</a>
+            </div>
+
+            <!-- Centered logo -->
+            <a class="navbar-brand me-auto" href="#">
+                <img src="assets/images/logo.gif" alt="" width="60"> Visa Agent AI
+            </a>
+
+            <!-- Right-aligned buttons -->
+            <div class="d-flex">
+                <a class="btn btn-outline-light me-2" href="/login">Login</a>
+                <a class="btn btn-gradient" href="#services">Start Chat</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center text-white d-flex flex-row align-items-center justify-content-center"
+        style="height: 90vh; background: linear-gradient(to bottom, #0d0d2b, #000000);">
+        <div>
+            <h1>Welcome to <br> <span class="highlighted">Visa Agent AI
+                </span> </h1>
+            <p class="mb-5">Your AI-Powered Visa Assistant</p>
+            <a class="btn btn-gradient text-white" href="#services">Start Chat</a>
+        </div>
+
+        <div>
+            <img class="hero-img" src="assets/images/bot.png" alt="">
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="container">
+            <span class="highlighted">Your Journey, Our Expertise</span>
+        </div>
+    </section>
+
+    <section class="services p-5" id="services">
+        <div class="container p-5">
+            <h2 class="highlighted mb-5">Explore Our Features</h2>
+            <div class="row">
+                <div class="col service" id="mock-chatbot-button">
+                    <h3>Mock Interview</h3>
+                </div>
+                <div class="col service" id="visa-requirements-chatbot-button">
+                    <h3>Visa Requirements</h3>
+                </div>
+                <div class="col service" id="visa-guidance-chatbot-button">
+                    <h3>Visa Guidance</h3>
+                </div>
+                <div class="col service" id="document-auth-chatbot-button">
+                    <h3>Document Authentication</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chat-popup">
+        <div id="chatbot-button" class="chatbot-button">
+            <img src="assets/images/chat.png" alt="Chat Icon" />
+        </div>
+
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="chatbot-window">
+            <div class="chatbot-header">
+                <div class="avatar"><img src="assets/images/logo.gif" alt=""></div>
+                <div class="chatbot-title">Visa Agent Support</div>
+                <div class="close-btn" onclick="closeChatbot()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-x-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                    </svg>
+                </div>
+            </div>
+
+            <div id="mock-chatbot-content" class="chatbot-content" style="display:none;">
+                <div class="message bot-message">
+                    <p>Hi there! I'm your mock interviewer. Let's start your interview practice. How can I assist you?
+                    </p>
+                </div>
+            </div>
+
+            <div id="visa-requirements-content" class="chatbot-content" style="display:none;">
+                <div class="message bot-message">
+                    <p>Hi! I can help you with the visa requirements for various countries. Please tell me the country
+                        you're applying to.</p>
+                </div>
+            </div>
+
+            <div id="visa-guidance-content" class="chatbot-content" style="display:none;">
+                <div class="message bot-message">
+                    <p>Hi! I'm here to guide you through your visa application process. What type of visa are you
+                        applying for?</p>
+                </div>
+            </div>
+
+            <div id="document-auth-content" class="chatbot-content" style="display:none;">
+                <div class="message bot-message">
+                    <p>Hi! I can assist with document authentication for your visa application. Please upload the
+                        document you need help with.</p>
+                </div>
+            </div>
+
+            <div class="chatbot-input">
+                <input type="text" id="user-input" placeholder="Type a message..." />
+                <button class="btn btn-gradient text-white" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container text-left">
+            <div class="contact_data">
+                <div class="left me-4">
+                    <!-- <h2 class="title text-start">Let's build Something
+                        <br>
+                        <span class="highlighted"> great together</span>
+                    </h2> -->
+
+                    <h2 class="title text-start">
+                        Building the Future
+                        <br>
+                        <span class="highlighted">
+                            Partnership
+                        </span>
+                        at a Time.
+                    </h2>
+
+                </div>
+                <div class="right">
+                    <div>
+                        <p class="text-start">Contact Us</p>
+                        <form action="#" method="post">
+                            <input type="text" placeholder="Name*" required>
+                            <input type="email" placeholder="Email*" required>
+                            <textarea rows="5" placeholder="Message*" required></textarea>
+                            <input class="btn-gradient text-white" type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-4">
+        <p>© Copyright 2025 Hack-Telligence- All Rights Reserved</p>
+    </footer>
+
+    <!-- Particles and Star Background (Custom) -->
+    <div class="particles"></div>
+    <div class="star-background"></div>
+
+    <!-- Bootstrap JS and Custom Script -->
+    <script src="assets/js/script.js"></script>
+    <!-- <script src="assets/js/mock-text.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sticky Navbar functionality
+        window.onscroll = function () { stickNavbar() };
+        const navbar = document.getElementById("navbar");
+        const sticky = navbar.offsetTop;
+
+        function stickNavbar() {
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        // Particles Animation
+        const particleContainer = document.querySelector('.particles');
+        const starBackground = document.querySelector('.star-background');
+
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+            particleContainer.appendChild(particle);
+        }
+
+        for (let i = 0; i < 300; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            starBackground.appendChild(star);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, #0d0d2b, #000000);
+    color: white;
+    scroll-behavior: smooth;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+:root {
+    --span-text: 'Audiowide';
+    --primary-color: #199BE2;
+    --gradient-color: linear-gradient(135deg, #ff4081, #e00070);
+}
+
+.navbar {
+    position: fixed;
+    top: 40px;
+    /* Added more margin-top */
+    left: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    margin: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    align-items: center;
+    transition: background 0.3s, color 0.1s, top 0.3s, left 0.3s, right 0.3s, padding 0.3s, margin 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+.navbar.sticky {
+    background: #0C0C27;
+    color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* White shadow */
+}
+
+.navbar a {
+    color: inherit;
+    /* Use inherit to ensure color change on scroll */
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.navbar-brand{
+    font-family: var(--span-text);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 2px;
+    font-weight: 200 !important;
+}
+
+.container {
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    /* Ensure content is above particles */
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.hero-img {
+    animation: bot-float 2s ease-in-out infinite;
+}
+
+@keyframes bot-float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+}
+
+.highlighted {
+    font-family: var(--span-text);
+    font-size: 100px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* .container:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.253);
+} */
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.5em;
+    margin-bottom: 0;
+}
+
+.cta-button {
+    background: var(--gradient-color);
+    padding: 1em 2em;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
+    transition: all 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #e00070, #ff4081);
+    box-shadow: 0 0 25px rgba(255, 64, 129, 0.7);
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #ff4081, #e00070);
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
+    border: none;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #e00070, #ff4081);
+    box-shadow: 0 0 25px rgba(255, 64, 129, 0.7);
+}
+
+.particles {
+    position: fixed;
+    /* Changed to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    /* Ensure particles are below content */
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 5px 1px white;
+    animation: float 10s infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(calc(-50vw + 100%));
+        opacity: 0;
+    }
+}
+
+/* Small stars background */
+.star-background {
+    position: fixed;
+    /* Changed to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 0;
+    /* Ensure star background is below everything */
+}
+
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    opacity: 0.8;
+}
+
+/* Additional section styling */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.feature-item {
+    max-width: 300px;
+    text-align: center;
+    padding: 20px;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.logos img {
+    max-width: 100px;
+    margin: 20px;
+}
+
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    color: #fff;
+    background-color: #232323;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Chatbot Button */
+.chatbot-button {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.chatbot-button img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Chatbot Window */
+.chatbot-window {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    bottom: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 650px;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 999;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.chatbot-header {
+    background: var(--gradient-color);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-title {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.close-btn {
+    cursor: pointer;
+}
+
+/* Chatbot Content */
+.chatbot-content {
+    font-size: 12px;
+    text-align: justify;
+    padding: 10px;
+    height: calc(100% - 110px);
+    overflow-y: auto;
+}
+
+.message {
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 8px;
+    max-width: 100%;
+    width: fit-content;
+}
+
+.bot-message {
+    background-color: var(--primary-color);
+    color: white;
+    align-self: flex-start;
+}
+
+.user-message {
+    background: var(--gradient-color);
+    color: #fff;
+    align-self: flex-end;
+}
+
+/* Chatbot Input */
+.chatbot-input {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.chatbot-input input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.services h2 {
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.services .service {
+    background: var(--gradient-color);
+    color: white;
+}
+
+.row {
+    gap: 30px;
+}
+
+.row .service {
+    padding: 25px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.5s;
+    background: var(--gradient-color);
+    color: white;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.row .service:hover {
+    transform: scale(1.1);
+}
+
+.row .service h2 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.banner {
+    background: var(--primary-color);
+}
+
+.banner .highlighted {
+    font-size: 50px;
+    color: white
+}
+
+/* Contact */
+.contact .title {
+    font-size: 2 rem;
+    text-align: center;
+}
+
+.contact .contact_data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    color: #fff;
+}
+
+.contact .left,
+.contact .right {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.contact .left ul {
+    width: 100%;
+}
+
+.contact .left li {
+    margin-bottom: 1.5rem;
+}
+
+.contact .left li h3 {
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.contact .right input,
+.contact textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    outline: none;
+}
